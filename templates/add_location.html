@@ -1,0 +1,40 @@
+{% extends "admin.html" %}
+{% load static %}
+{% block content %}
+
+
+
+<style>
+    .col-md-4 , .col-md-8 , .col-md-6{
+        float: left;
+    }
+</style>
+
+<div class="container-fluid">
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Add Location</h1>
+    </div>
+
+    <div class="row w-100">
+        <div class="form-panel w-100">
+            <form method="post" enctype="multipart/form-data" action="{% url 'add_location' %}" onsubmit="return val(this)" action="">
+                {% csrf_token %}
+                
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Location</label>
+                        <input type="text" class="form-control" name="loc" required/>
+                    </div>
+                </div>
+                <button type="submit" name="submit" class="btn btn-primary mt-4">Add</button>
+                
+
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
